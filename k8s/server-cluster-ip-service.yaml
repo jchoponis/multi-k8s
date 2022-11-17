@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: server-cluster-ip-service
+spec:
+  type: ClusterIP
+  selector:
+    component: server
+  ports:
+    - port: 5000 #incoming traffic, in our case we have ports match so it's essentially a pass-through
+      targetPort: 5000 #what pod needs to be set to listen for

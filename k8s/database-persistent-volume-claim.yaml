@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: database-persistent-volume-claim
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 2Gi
+
+# default k8s on docker desktop
+# Provisioner:           docker.io/hostpath
+
+#other storageClass options - https://kubernetes.io/docs/concepts/storage/storage-classes/

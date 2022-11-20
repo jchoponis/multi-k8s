@@ -1,0 +1,13 @@
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: goldspandragon-com-tls
+spec:
+  secretName: goldspandragon-com
+  issuerRef:
+    name: letsencrypt-prod
+    kind: ClusterIssuer
+  commonName: goldspandragon.com
+  dnsNames:
+    - goldspandragon.com
+    - www.goldspandragon.com
